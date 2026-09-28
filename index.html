@@ -134,6 +134,7 @@ a:hover { text-decoration: underline; }
 .card .time { font-size: 12px; font-weight: 600; color: var(--text-tertiary); letter-spacing: .01em; }
 .card .name { font-size: 17px; font-weight: 600; margin: 2px 0 4px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 6px; }
 .card .desc { font-size: 14px; color: var(--text-secondary); line-height: 1.45; }
+.card .ride { font-size: 14px; line-height: 1.5; color: var(--text-primary); background: var(--bg-secondary); border-radius: 8px; padding: 8px 10px; margin: 6px 0 8px; }
 
 /* Badge */
 .badge { display: inline-flex; align-items: center; font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 4px; }
@@ -259,7 +260,8 @@ const DAYS = [
         "lng": 120.4315,
         "type": "transport",
         "time": "约 14:00",
-        "desc": "到达厅跟交通中心下到 B2。19 号线看火车西站或苕溪，西湖文化广场换 1 号线湘湖方向，龙翔桥下。",
+        "ride": "坐飞机到萧山 T4。去酒店不走路：到达厅跟交通中心下到 B2，19 号线看「火车西站」或「苕溪」，不要永盛路。西湖文化广场换 1 号线「湘湖」，龙翔桥下。",
+        "desc": "落地在 T4，不用去 T3 长廊。",
         "detail": "广州清晨：大学城城际 B 口，城际码，方向白云机场北，下白云机场东（T3）。\n地铁大约 40–45 分钟，再走 10–14 分钟到酒店。打车备选导航「中河中路 222」。",
         "budget": "地铁以闸机为准",
         "pay": {
@@ -277,6 +279,7 @@ const DAYS = [
         "lng": 120.16773,
         "type": "hotel",
         "time": "入住",
+        "ride": "龙翔桥出 D 口（平海路，朝浣纱路），沿平海路往东过中河，10–14 分钟到中河中路 222。不要出 C 口。",
         "desc": "上城区中河中路 222 号。先扔行李，再去知味观。",
         "detail": "店名带湖滨，实际在湖滨商圈东沿。大约 15:30–16:00 到。10.4 上午 11:20 退房。",
         "pay": {
@@ -387,8 +390,9 @@ const DAYS = [
         "lng": 120.14096,
         "type": "transport",
         "time": "09:20",
+        "ride": "喜柚沿平海路往西，到龙翔桥公交中心站（学士路，工联二楼）。普通 4 路，车头「九溪」或「转塘」，侧牌要有苏堤、净寺。不要上 4 路快线。2 元，约 25–35 分钟，下苏堤。",
         "desc": "4 路在南山路上这一站下。花港在西北方向，不要朝正北上映波桥。",
-        "detail": "龙翔桥公交中心站坐普通 4 路，车头「九溪」或「转塘」，侧牌要有苏堤、净寺。不要上 4 路快线。2 元，约 25–35 分钟。",
+        "detail": "侧牌上没有苏堤、净寺，就是快线或改道，不要上。问站务改 4W 或 31 路。",
         "budget": "公交 ¥2",
         "gmap": "%E8%8B%8F%E5%A0%A4%E5%8D%97%E5%8F%A3",
         "xhsKeyword": "苏堤站 花港观鱼"
@@ -514,8 +518,9 @@ const DAYS = [
         "lng": 120.16613,
         "type": "food",
         "time": "17:30",
+        "ride": "17:00 以后在净寺或长桥打车，导航「河坊街 101 号」，不要设西湖。8:00–17:00 南山路出租车进不来，这段不走路。",
         "desc": "默认晚饭。河坊街 101–103 号。乾隆鱼头两人分、东坡焖肉。",
-        "detail": "沿南山路走 20–25 分钟。17:00 后可打车，导航这个门牌，不要设西湖。回酒店沿中山中路往北走，或打车「中河中路 222」。",
+        "detail": "回酒店沿中山中路往北走，或在鼓楼打车「中河中路 222」。",
         "budget": "人均约 ¥90",
         "pay": {
           "alipay": 1,
@@ -542,9 +547,10 @@ const DAYS = [
         "lng": 120.09642,
         "type": "spot",
         "time": "09:30",
-        "desc": "龙翔桥至灵隐专线，约 5 元、30–40 分钟，终点灵隐公交总站。先石窟后寺庙。",
-        "detail": "专线没有就打车到西溪路 608，不要设山门。上午场需提前预约。",
-        "budget": "飞来峰+香花券",
+        "ride": "龙翔桥公交中心站坐「龙翔桥至灵隐专线」，约 5 元、30–40 分钟，终点灵隐公交总站。专线没了就打车到「西溪路 608」，再换接驳，不要设灵隐寺山门。",
+        "desc": "先石窟后寺庙。上午场已约好，凭身份证进。香花券不用另买。",
+        "detail": "2025 年 12 月 1 日起飞来峰和灵隐寺免票，预约就能进寺。",
+        "budget": "免票，凭预约",
         "gmap": "%E7%81%B5%E9%9A%90%E9%A3%9E%E6%9D%A5%E5%B3%B0",
         "xhsKeyword": "灵隐 飞来峰"
       },
@@ -554,8 +560,8 @@ const DAYS = [
         "lng": 120.1006,
         "type": "food",
         "time": "11:40",
-        "desc": "默认午饭，在寺内入口附近，要有香花券。罗汉面，可加素烧鹅。",
-        "detail": "排队超过 20 分钟就只吃一碗。吃完回灵隐公交总站坐 7 路，车头「城站」，2 元，下新新饭店或岳庙。",
+        "desc": "默认午饭，在寺内入口附近。罗汉面，可加素烧鹅。到了排队吃，不用另买券。",
+        "detail": "排队超过 20 分钟就只吃一碗。吃完去孤山不走路，见下一站。",
         "budget": "面约 ¥20",
         "pay": {
           "alipay": 1,
@@ -573,8 +579,9 @@ const DAYS = [
         "lng": 120.1355,
         "type": "spot",
         "time": "13:15",
+        "ride": "十方苑吃完，回灵隐公交总站（来时同一个场）。坐 7 路，车头「城站」或「城站火车站」，2 元，约 25–35 分钟。优先下「新新饭店」，坐过了下「岳庙」。过北山街，走西泠桥，10–15 分钟上岛。不要坐到龙翔桥。",
         "desc": "过北山街走西泠桥。秋瑾墓看一眼，再到印社、中山公园。不进浙博。",
-        "detail": "15:30 前在小程序「西湖旅游」买好画舫。下山往东上白堤，不回酒店，也不走西泠桥回去。",
+        "detail": "15:30 前买好画舫：微信搜公众号「西湖旅游」，进「景点门票」买环湖夜游。下山往东上白堤，不回酒店，也不走西泠桥回去。",
         "gmap": "%E8%A5%BF%E6%B3%A0%E5%8D%B0%E7%A4%BE",
         "xhsKeyword": "西泠印社 孤山"
       },
@@ -687,8 +694,8 @@ const DAYS = [
         "lng": 120.1575,
         "type": "spot",
         "time": "18:40",
-        "desc": "外婆家出门往西大约 10 分钟。票面写哪个码头走哪个。五公园就再沿湖滨路往北几分钟。",
-        "detail": "不要回断桥，也不要去花港或岳庙。尽量坐 18:40 这班，船上能看见 19:30 喷泉。约 50–90 元/人。",
+        "desc": "外婆家出门往西走大约 10 分钟到一公园。票面是五公园，就再沿湖滨路往北几分钟。",
+        "detail": "买票：微信搜公众号「西湖旅游」，进「景点门票」，买环湖夜游（大约 50–90 元）。一公园、五公园窗口和扫码也能买。不要买 188 元的登岛船。尽量坐 18:40 这班，船上能看见 19:30 喷泉。不要回断桥，也不要去花港或岳庙。",
         "budget": "约 ¥50–90/人",
         "gmap": "%E8%A5%BF%E6%B9%96%E4%B8%80%E5%85%AC%E5%9B%AD%E6%B8%B8%E8%88%B9%E7%A0%81%E5%A4%B4",
         "xhsKeyword": "西湖夜游画舫 一公园"
@@ -708,8 +715,9 @@ const DAYS = [
         "lng": 120.20873,
         "type": "transport",
         "time": "12:20",
-        "desc": "11:20 退房。龙翔桥坐 1 号线，车头下沙或萧山机场，约 6 站、20 分钟。不打车。",
-        "detail": "G7390 13:40 开，只停 3 分钟。只下站名「苏州」。",
+        "ride": "平海路往西进龙翔桥。1 号线看「下沙」或「萧山机场」，不要「湘湖」。约 6 站、20 分钟，下火车东站。这个点不打车。",
+        "desc": "11:20 退房。G7390 13:40 开，只停 3 分钟。",
+        "detail": "只下站名「苏州」。",
         "budget": "地铁约 ¥4",
         "gmap": "%E6%9D%AD%E5%B7%9E%E4%B8%9C%E7%AB%99",
         "xhsKeyword": "杭州东站 地铁 1号线"
@@ -720,7 +728,8 @@ const DAYS = [
         "lng": 120.62402,
         "type": "hotel",
         "time": "15:30",
-        "desc": "姑苏区临顿路 306 号。苏州站出站打车，导航这个门牌。",
+        "ride": "苏州站出站打车，导航「苏亦酒店」或「临顿路 306」。15–20 分钟，十一可能 25–30。拖行李不坐地铁。",
+        "desc": "姑苏区临顿路 306 号。当天不进拙政园、苏博、虎丘。",
         "detail": "平时 15–20 分钟，十一可能 25–30 分钟。当天不进拙政园、苏博、虎丘。",
         "pay": {
           "alipay": 1,
@@ -958,8 +967,9 @@ const DAYS = [
         "lng": 120.57635,
         "type": "spot",
         "time": "13:45",
-        "desc": "6 号线车头「苏州新区火车站」，下虎丘，往北走到南门。塔一层默认不上。",
-        "detail": "大约 7 站、15–20 分钟，票价约 3–4 元。不要打车穿古城，不要设虎丘婚纱城。出南门上山塘河北岸往东。",
+        "ride": "午饭后沿临顿路往南到干将路，进临顿路站。6 号线看「苏州新区火车站」，不要「桑田岛」。约 7 站、15–20 分钟，下虎丘。出站往北沿虎丘路约 400 米到南门。不要打车穿古城，不要设虎丘婚纱城。",
+        "desc": "断梁殿、剑池、云岩寺塔。塔一层默认不上。",
+        "detail": "出南门后上山塘河北岸，往东走到普济桥。",
         "budget": "约 ¥70/人",
         "gmap": "%E8%99%8E%E4%B8%98%E6%99%AF%E5%8C%BA%E5%8D%97%E9%97%A8",
         "xhsKeyword": "虎丘"
@@ -994,8 +1004,9 @@ const DAYS = [
         "lng": 120.59778,
         "type": "transport",
         "time": "17:05",
-        "desc": "打车终点。2 号线 3 号口出，走进山塘街。",
-        "detail": "不要把车设到通贵桥或孙盛兴。出站往街里走到方基上 35 号。",
+        "ride": "不沿河走到这里。普济桥上车点说「普济桥下塘」，彩云桥上车点「山塘街半塘」。打车终点都是「地铁山塘街站」。不要设通贵桥或孙盛兴。",
+        "desc": "2 号线 3 号口出，走进山塘街，到方基上 35 号孙盛兴。",
+        "detail": "桥上不能拦车，过桥到南岸再上。",
         "budget": "打车",
         "gmap": "%E5%9C%B0%E9%93%81%E5%B1%B1%E5%A1%98%E8%A1%97%E7%AB%99",
         "xhsKeyword": "山塘街站 3号口"
@@ -1103,7 +1114,8 @@ const DAYS = [
         "lng": 120.4294,
         "type": "transport",
         "time": "11:00",
-        "desc": "导航机场或机票上的国内出发。不要设无锡站、园区、虎丘。",
+        "ride": "09:00 走到临顿路大路边打车，导航「苏南硕放国际机场」或机票上的国内出发。没有直达地铁。平时 50–70 分钟，十一按 70–90 分钟。不要设无锡站、园区、虎丘。",
+        "desc": "目标 11:00–11:20 到航站楼。12:50 前办完值机托运。",
         "detail": "十一按 70–90 分钟，大约 150–200 元。目标 11:00–11:20 到。12:50 前办完值机托运。",
         "budget": "打车约 ¥150–200",
         "gmap": "%E8%8B%8F%E5%8D%97%E7%A1%95%E6%94%BE%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA",
@@ -1315,7 +1327,7 @@ function locCard(loc, dayIdx) {
     lnk += `<a href="${dpHref}" onclick="return openDp('${locKey.replace(/'/g,"\\'")}')" class="btn dp">${dpLabel}</a>`;
   }
   if(loc.reserve) lnk += `<a href="${loc.reserve}" target="_blank" class="btn rsv">📅 预约</a>`;
-  return `<div class="tl-item"><div class="tl-dot ${dot}"></div><div class="card" onclick="if(!event.target.closest('.btn,.links'))toggle('${uid}')"><div class="time">${loc.time!=='—'?loc.time:'备选'}</div><div class="name">${bdg} ${loc.name}</div><div class="desc">${loc.desc}</div>${loc.budget?'<div class="budget">'+loc.budget+'</div>':''}${payChips(loc.pay)}<div class="links">${lnk}</div>${loc.detail?'<div class="details" id="'+uid+'">'+loc.detail.replace(/\n/g,'<br>')+'</div>':''}</div></div>`;
+  return `<div class="tl-item"><div class="tl-dot ${dot}"></div><div class="card" onclick="if(!event.target.closest('.btn,.links'))toggle('${uid}')"><div class="time">${loc.time!=='—'?loc.time:'备选'}</div><div class="name">${bdg} ${loc.name}</div>${loc.ride?`<div class="ride">怎么去：${loc.ride}</div>`:''}<div class="desc">${loc.desc}</div>${loc.budget?'<div class="budget">'+loc.budget+'</div>':''}${payChips(loc.pay)}<div class="links">${lnk}</div>${loc.detail?'<div class="details" id="'+uid+'">'+loc.detail.replace(/\n/g,'<br>')+'</div>':''}</div></div>`;
 }
 
 function renderDay(idx) {
